@@ -1,0 +1,7 @@
+# Ignore all files in data directory
+*
+
+# But keep the directory structure
+!.gitignore
+!*/
+!*/.gitkeep

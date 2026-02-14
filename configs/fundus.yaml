@@ -1,0 +1,51 @@
+# Default configuration for fundus vessel segmentation
+
+# Dataset settings
+data:
+  data_dir: "data/processed/fundus"
+  image_size: 1024
+  augmentation: true
+  use_normalization: true
+  lower_percentile: 1.0
+  upper_percentile: 99.0
+  contrast_enhancement:
+    gamma: 1.2
+    clahe_clip_limit: 2.0
+    clahe_tile_size: [8, 8]
+  splits:
+    train: 0.8
+    val: 0.1
+    test: 0.1
+
+# Model settings
+model:
+  name: "unet"  # Options: unet, unetplusplus, deeplabv3plus
+  encoder: "mit_b1"
+  in_channels: 3  # 1 for grayscale, 3 for RGB
+  classes: 1  # 1 for binary segmentation
+  pretrained_weights: null
+
+# Training settings
+training:
+  batch_size: 2
+  epochs: 30
+  learning_rate: 1e-4
+  weight_decay: 1e-5
+  gradient_clip_val: 0.5
+  loss:
+    dice_weight: 0.5
+    focal_weight: 0.5
+  threshold: 0.5
+  patience: 8
+  seed: 42
+
+# Hardware settings
+hardware:
+  gpus: 1
+  num_workers: 4
+  precision: 32
+
+# Logging settings
+logging:
+  log_dir: "lightning_logs_fundus_mit_b1"
+  log_every_n_steps: 10
