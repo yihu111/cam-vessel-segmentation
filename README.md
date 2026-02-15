@@ -90,6 +90,21 @@ data/processed/cam/
 
 ED11 and ED15 datasets can be used for exploring quantification results on segmentation performance of the final model across different embryonic stages.
 
+**Note:** Images 01 to 05 in both ED11 and ED15 datasets are training images and should not be used for biological validation purposes.
+
+---
+
+## Pre-built Applications
+
+**For quick automated segmentation and quantification without manual setup**, download the ready-to-use applications:
+
+**[Download Pre-built Apps (AppImage for Linux & .exe for Windows)](https://drive.google.com/drive/folders/1wiYDJk_f6glJ8CU_X81DkwIPEdlIxG0F?usp=drive_link)**
+
+- **Linux**: AppImage - No installation required, just make executable and run
+- **Windows**: .exe installer - Double-click to install and launch
+
+These applications provide automated vessel segmentation and quantification with results generated automatically.
+
 ---
 
 ## Usage
